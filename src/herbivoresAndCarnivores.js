@@ -12,11 +12,8 @@ class Animal {
   }
 
   die() {
-    const index = Animal.alive.indexOf(this);
-
-    if (index !== -1) {
-      Animal.alive.splice(index, 1);
-    }
+    this.health = 0;
+    Animal.alive = Animal.alive.filter((a) => a.health > 0);
   }
 
   changeHealth(amount) {
